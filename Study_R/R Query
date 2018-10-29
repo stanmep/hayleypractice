@@ -1,0 +1,83 @@
+#mport data
+LungCapData <- read.table(file.choose(), header=T, sep="\t")
+
+LungCapData[-(4:722), ]
+names(LungCapData)
+
+#$ needed
+mean(Age)
+mean(LungCapData$Age)
+
+#I dont need to put $ if data is attached
+attach(LungCapData)
+mean(Age)
+detach(LungCapDat)
+
+#When the class is not factor
+class(LungCap)
+class(Height)
+class(Age)
+
+#When the class is factor
+class(Smoke)
+class(Gender)
+
+#level <- what factors are 
+levels(Smoke)
+levels(Gender)
+
+#Summary
+Summary(LungCapData)
+
+x <- c(0,1,1,1,0,0,0,0,0)
+class(x) 
+summary(x)
+
+x <- as.factor(x)
+
+class(x)
+
+summary(x)
+
+3 dim <- Row number, Column number
+dim(LungCapData)
+length(Age)
+Age[11:14]
+LungCapData[11:14, ]
+mean(Age[Gender=="female"])
+
+
+FemData <- LungCapData[Gender=="female"]
+MaleData <- LungCapData[Gender=="male"]
+
+FemData[1:4, ]
+MaleData[Age > 15]
+MaleOver15 <- LungCapData[Gender == "Male" & Age > 15, ]
+
+
+##########10. Logic Statements(TRUE/FALSE)
+LungCapData <- read.table(file.choose(), header=T, sep="\t")
+
+Age[1:5]
+temp <- Age>15
+temp[1:5]
+# The result is FALSE and TRUE
+
+temp2 <- as.numeric(Age>15)
+temp[1:5]
+# The result is 0 and 1
+
+FemSmoke <- Gender=="female" & Smoke=="yes"
+FemSmoke[1:5]
+
+MoreData <- cbind(LungCapData, FemSmoke)
+
+#Remove workspace
+
+##########11. Sep up working directory
+
+#Get Working Directory
+getwd()
+
+projectWD <- ("/Users/hayley.heo/Desktop/Project 1")
+rm(list=ls())
